@@ -17,7 +17,7 @@ RPS1="%F{red}%(?..(%?%))%f"
 alias reload='source ~/.zshrc'
 alias ls='ls -GF'
 alias l='ls -a'
-alias ll='ls -l'
+alias ll='ls -al'
 alias python='python3'
 
 
