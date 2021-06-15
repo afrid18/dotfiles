@@ -33,20 +33,43 @@ alias tmux='tmux -2'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias saymyname="echo $USERNAME"
 
 # BIND KEYS
 
-bindkey -v
-
+# bindkey -v
 
 # PATHS
 
 export PATH=$PATH:'/Applications/kate.app/Contents/MacOS'
+# adding ~/bin path for my personal executables
+
+
+export PATH=~/bin:$PATH
 
 # ADDING C INCLUDE PATH AND LIBRARY PATH ##FOR MACBOOK USERS USING HOMEBREW AS THE PACKAGE MANAGER
 
 
-C_INCLUDE_PATH=/opt/homebrew/include
-LIBRARY_PATH=/opt/homebrew/lib
+C_INCLUDE_PATH=.:/opt/homebrew/include
+LIBRARY_PATH=.:/opt/homebrew/lib
 export C_INCLUDE_PATH
 export LIBRARY_PATH
+
+# Adding vim like zsh experience using zsh-vi-mode plugin
+bindkey -v
+
+# source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+
+
+# A CUSTOM FUNCTION TO DISPLAY ALL THE COLORS AVAILABLE
+
+disco() {
+    for i in {0..255}; do
+        printf "\x1b[38;5;${i}m${i}\t"
+    done
+    printf '\n'
+}
+
+
+
