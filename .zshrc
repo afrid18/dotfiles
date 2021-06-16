@@ -37,7 +37,7 @@ alias saymyname="echo $USERNAME"
 
 # BIND KEYS
 
-# bindkey -v
+bindkey -v
 
 # PATHS
 
@@ -56,7 +56,7 @@ export C_INCLUDE_PATH
 export LIBRARY_PATH
 
 # Adding vim like zsh experience using zsh-vi-mode plugin
-bindkey -v
+# bindkey -v
 
 # source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
@@ -72,4 +72,13 @@ disco() {
 }
 
 
+# for RUBY libs
+export SDKROOT=$(xcrun --show-sdk-path)
+# for ruby
+export PATH=/opt/homebrew/opt/ruby/bin:$PATH
 
+copy_configs() {
+    cp ~/.zshrc ~/.myconfigs/.zshrc
+    cp ~/.tmux.conf ~/.myconfigs/.tmux.conf
+    cp ~/.vimrc ~/.myconfigs/.vimrc
+}
