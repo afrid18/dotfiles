@@ -15,6 +15,7 @@ promptinit
 # hashes of the frequently used directories
 
 hash -d  codedir=/Users/Imamkhaja/Desktop/practice
+hash -d musicdir=/Users/imamkhaja/Music
 
 # Change the prompt
 
@@ -82,3 +83,9 @@ copy_configs() {
     cp ~/.tmux.conf ~/.myconfigs/.tmux.conf
     cp ~/.vimrc ~/.myconfigs/.vimrc
 }
+
+# Created by `pipx` on 2021-06-18 12:18:44
+export PATH="$PATH:/Users/imamkhaja/.local/bin"
+
+# Created by `pipx` on 2021-06-18 12:18:44
+export PATH="$PATH:/Users/imamkhaja/Library/Python/3.9/bin"
