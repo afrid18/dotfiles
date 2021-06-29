@@ -29,3 +29,7 @@ set incsearch
 " SETTING <C-a> <C-x> to add and subtract only for decimals
 
 set nrformats=
+
+" Mapping carriage return to stop highlighting after hitting <CR> twice
+
+nnoremap <CR> :noh<CR><CR>
