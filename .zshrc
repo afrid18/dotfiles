@@ -35,6 +35,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias saymyname="echo $USERNAME"
+alias gcc=gcc-11
+alias g++=g++-11
 
 # BIND KEYS
 
@@ -42,10 +44,7 @@ bindkey -v
 
 # PATHS
 
-export PATH=$PATH:'/Applications/kate.app/Contents/MacOS'
 # adding ~/bin path for my personal executables
-
-
 export PATH=~/bin:$PATH
 
 # ADDING C INCLUDE PATH AND LIBRARY PATH ##FOR MACBOOK USERS USING HOMEBREW AS THE PACKAGE MANAGER
@@ -55,6 +54,11 @@ C_INCLUDE_PATH=.:/opt/homebrew/include
 LIBRARY_PATH=.:/opt/homebrew/lib
 export C_INCLUDE_PATH
 export LIBRARY_PATH
+
+# for RUBY libs
+export SDKROOT=$(xcrun --show-sdk-path)
+# for ruby
+export PATH=/opt/homebrew/opt/ruby/bin:$PATH
 
 # Adding vim like zsh experience using zsh-vi-mode plugin
 # bindkey -v
@@ -72,12 +76,7 @@ disco() {
     printf '\n'
 }
 
-
-# for RUBY libs
-export SDKROOT=$(xcrun --show-sdk-path)
-# for ruby
-export PATH=/opt/homebrew/opt/ruby/bin:$PATH
-
+# A custom function to copy all my major configs to .myconfigs
 copy_configs() {
     cp ~/.zshrc ~/.myconfigs/.zshrc
     cp ~/.tmux.conf ~/.myconfigs/.tmux.conf
@@ -89,3 +88,4 @@ export PATH="$PATH:/Users/imamkhaja/.local/bin"
 
 # Created by `pipx` on 2021-06-18 12:18:44
 export PATH="$PATH:/Users/imamkhaja/Library/Python/3.9/bin"
+
