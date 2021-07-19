@@ -57,7 +57,7 @@ set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
 " set 7 lines from top and bottom when moving vertically using j/k
-set so=7
+set so=9
 
 " FInding files:
 " search down into subfolders
