@@ -90,6 +90,13 @@ export PATH="$PATH:/Users/imamkhaja/.local/bin"
 export PATH="$PATH:/Users/imamkhaja/Library/Python/3.9/bin"
 
 
+
+# LLVM paths etc....
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+
+
 # GIT PROMPT
 autoload -Uz add-zsh-hook
 autoload -Uz add-zsh-hook vcs_info
