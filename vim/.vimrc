@@ -159,5 +159,6 @@ Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
-Plug 'codota/tabnine-vim'
+" Plug 'codota/tabnine-vim'
+" Plug 'neoclide/coc.nvim'
 call plug#end()
