@@ -1,4 +1,5 @@
 autoload -U promptinit # initialize the prompt system promptinit
+autoload -Uz compinit && compinit
 
 # SET OPTIONS
 
@@ -95,6 +96,9 @@ export PATH="$PATH:/Users/imamkhaja/Library/Python/3.9/bin"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+
+# AUTO COMPLETE FOR SMALL CASE
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 
 # GIT PROMPT

@@ -8,6 +8,7 @@ set softtabstop=-1
 set shiftwidth=0
 set expandtab
 set ai
+set nu
 filetype indent on
 
 " for Makefiles
