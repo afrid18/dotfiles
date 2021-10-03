@@ -112,3 +112,9 @@ PROMPT+='%B%F{red}${vcs_info_msg_0_}%f %# %b'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr ' *'
 zstyle ':vcs_info:*' stagedstr ' +'
+
+
+# Copy present dir
+cpdir() {
+    pwd | pbcopy
+}
