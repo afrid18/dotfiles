@@ -118,3 +118,17 @@ zstyle ':vcs_info:*' stagedstr ' +'
 cpdir() {
     pwd | pbcopy
 }
+
+
+# script to install ruby and jekyll
+# alias laptop='bash <(curl -s https://raw.githubusercontent.com/monfresh/laptop/master/laptop)'
+
+export PATH="$HOME/.bin:$PATH"
+
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+
+chruby ruby-2.7.3
+
+eval "$(nodenv init -)"
