@@ -118,17 +118,7 @@ zstyle ':vcs_info:*' stagedstr ' +'
 cpdir() {
     pwd | pbcopy
 }
-
-
-# script to install ruby and jekyll
-# alias laptop='bash <(curl -s https://raw.githubusercontent.com/monfresh/laptop/master/laptop)'
-
-export PATH="$HOME/.bin:$PATH"
-
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-
-chruby ruby-2.7.3
-
-eval "$(nodenv init -)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
+export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
