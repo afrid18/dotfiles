@@ -66,6 +66,9 @@ export PATH=/opt/homebrew/opt/ruby/bin:$PATH
 
 # source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
+# adding homebrew bin path prior to the system bin
+#
+export PATH=/opt/homebrew/bin:$PATH
 
 
 # A CUSTOM FUNCTION TO DISPLAY ALL THE COLORS AVAILABLE
@@ -122,3 +125,4 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
 export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
+export GPG_TTY=$(tty)
