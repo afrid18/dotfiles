@@ -2,29 +2,23 @@ autoload -U promptinit # initialize the prompt system promptinit
 autoload -Uz compinit && compinit
 
 # SET OPTIONS
-
 setopt autocd
 
 # Adding history file
-
 HISTFILE=~/.zsh_history # sets the location of the history file
 
 # prompt setup
-
 promptinit
 
 # hashes of the frequently used directories
-
 hash -d  codedir=/Users/Imamkhaja/Desktop/practice
 hash -d musicdir=/Users/imamkhaja/Music
 
 # Change the prompt
-
 PROMPT='%F{228}%BAfrid%f %2~%b'
 RPS1="%F{red}%(?..(%?%))%f"
 
 # ALIASES
-
 alias reload='source ~/.zshrc'
 alias ls='ls -GF'
 alias l='ls -a'
@@ -40,17 +34,14 @@ alias gcc=gcc-11
 alias g++=g++-11
 
 # BIND KEYS
-
 bindkey -v
 
 # PATHS
-
 # adding ~/bin path for my personal executables
 export PATH=~/bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
 
 # ADDING C INCLUDE PATH AND LIBRARY PATH ##FOR MACBOOK USERS USING HOMEBREW AS THE PACKAGE MANAGER
-
-
 C_INCLUDE_PATH=.:/opt/homebrew/include
 LIBRARY_PATH=.:/opt/homebrew/lib
 export C_INCLUDE_PATH
@@ -61,18 +52,10 @@ export SDKROOT=$(xcrun --show-sdk-path)
 # for ruby
 export PATH=/opt/homebrew/opt/ruby/bin:$PATH
 
-# Adding vim like zsh experience using zsh-vi-mode plugin
-# bindkey -v
-
-# source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
-# adding homebrew bin path prior to the system bin
-#
 export PATH=/opt/homebrew/bin:$PATH
 
 
 # A CUSTOM FUNCTION TO DISPLAY ALL THE COLORS AVAILABLE
-
 disco() {
     for i in {0..255}; do
         printf "\x1b[38;5;${i}m${i}\t"
@@ -80,29 +63,9 @@ disco() {
     printf '\n'
 }
 
-# A custom function to copy all my major configs to .myconfigs
-copy_configs() {
-    cp ~/.zshrc ~/.myconfigs/.zshrc
-    cp ~/.tmux.conf ~/.myconfigs/.tmux.conf
-    cp ~/.vimrc ~/.myconfigs/.vimrc
-}
-
-# Created by `pipx` on 2021-06-18 12:18:44
-export PATH="$PATH:/Users/imamkhaja/.local/bin"
-
-# Created by `pipx` on 2021-06-18 12:18:44
-export PATH="$PATH:/Users/imamkhaja/Library/Python/3.9/bin"
-
-
-
-# LLVM paths etc....
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
 # AUTO COMPLETE FOR SMALL CASE
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-
 
 # GIT PROMPT
 autoload -Uz add-zsh-hook
@@ -121,8 +84,3 @@ zstyle ':vcs_info:*' stagedstr ' +'
 cpdir() {
     pwd | pbcopy
 }
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
-export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
-export GPG_TTY=$(tty)
