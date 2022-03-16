@@ -84,3 +84,4 @@ zstyle ':vcs_info:*' stagedstr ' +'
 cpdir() {
     pwd | pbcopy
 }
+export GPG_TTY=$(tty)
