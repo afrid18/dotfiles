@@ -11,7 +11,7 @@ HISTFILE=~/.zsh_history # sets the location of the history file
 promptinit
 
 # hashes of the frequently used directories
-hash -d  codedir=/Users/Imamkhaja/Desktop/practice
+hash -d  codedir=/Users/Imamkhaja/practice
 hash -d musicdir=/Users/imamkhaja/Music
 
 # Change the prompt
@@ -23,6 +23,7 @@ alias reload='source ~/.zshrc'
 alias ls='ls -GF'
 alias l='ls -a'
 alias ll='ls -al'
+alias rm='rm -iIv'
 alias python='python3'
 alias pip='pip3'
 alias tmux='tmux -2'
@@ -33,6 +34,9 @@ alias saymyname="echo $USERNAME"
 alias gcc=gcc-11
 alias g++=g++-11
 
+# Adding alias for gmake as make
+alias make=gmake
+
 # BIND KEYS
 bindkey -v
 
@@ -40,6 +44,7 @@ bindkey -v
 # adding ~/bin path for my personal executables
 export PATH=~/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
+export EDITOR=vim
 
 # ADDING C INCLUDE PATH AND LIBRARY PATH ##FOR MACBOOK USERS USING HOMEBREW AS THE PACKAGE MANAGER
 C_INCLUDE_PATH=.:/opt/homebrew/include
