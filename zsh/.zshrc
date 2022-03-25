@@ -52,10 +52,11 @@ LIBRARY_PATH=.:/opt/homebrew/lib
 export C_INCLUDE_PATH
 export LIBRARY_PATH
 
-# for RUBY libs
-export SDKROOT=$(xcrun --show-sdk-path)
-# for ruby
-export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+# Ruby gems paths
+export PATH=/Users/imamkhaja/.gem/ruby/2.1.0:$PATH
+export PATH=/Users/imamkhaja/.local/share/gem/ruby/3.1.0:$PATH
+export PATH=/opt/homebrew/lib/ruby/gems/3.1.0:$PATH
+export PATH=/opt/homebrew/Cellar/ruby/3.1.1/lib/ruby/gems/3.1.0:$PATH
 
 export PATH=/opt/homebrew/bin:$PATH
 
