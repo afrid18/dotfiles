@@ -33,6 +33,7 @@ alias ....='cd ../../..'
 alias saymyname="echo $USERNAME"
 alias gcc=gcc-11
 alias g++=g++-11
+alias grep='grep --color=auto'
 
 # Adding alias for gmake as make
 alias make=gmake
@@ -90,4 +91,8 @@ zstyle ':vcs_info:*' stagedstr ' +'
 cpdir() {
     pwd | pbcopy
 }
-export GPG_TTY=$(tty)
+
+
+# Environment Variables(Custom defined)
+export GPG_TTY=$(tty) # For GnuPG
+#export GREP_COLOR='ms=01;04;25;36'

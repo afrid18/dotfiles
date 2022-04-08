@@ -51,6 +51,8 @@ set incsearch
 set ruler
 highlight Comment ctermfg=green
 set noswapfile
+set undodir=~/.config/vim/undodir
+set undofile
 set encoding=utf-8
 
 " Configure backspace so it acts as it should act
