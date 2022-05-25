@@ -58,8 +58,8 @@ export PATH=/Users/imamkhaja/.gem/ruby/2.1.0:$PATH
 export PATH=/Users/imamkhaja/.local/share/gem/ruby/3.1.0:$PATH
 export PATH=/opt/homebrew/lib/ruby/gems/3.1.0:$PATH
 export PATH=/opt/homebrew/Cellar/ruby/3.1.1/lib/ruby/gems/3.1.0:$PATH
-
 export PATH=/opt/homebrew/bin:$PATH
+export PATH="/Users/imamkhaja/.local/share/solana/install/active_release/bin:$PATH"
 
 
 # A CUSTOM FUNCTION TO DISPLAY ALL THE COLORS AVAILABLE
