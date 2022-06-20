@@ -1,0 +1,1 @@
+require('afrid-macbook/telescope')
