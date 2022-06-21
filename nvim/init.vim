@@ -42,6 +42,7 @@ Plug 'akinsho/bufferline.nvim'                     " Buffers
 Plug 'machakann/vim-highlightedyank'               " Highlight yanked text
 Plug 'kyazdani42/nvim-tree.lua'                    " File explorer
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' } " Color scheme
+Plug 'windwp/nvim-autopairs'                        " Auto pairing of brackets
 " Lsp
 Plug 'neovim/nvim-lspconfig'     
 Plug 'jose-elias-alvarez/null-ls.nvim'
