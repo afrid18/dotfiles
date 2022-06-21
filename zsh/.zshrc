@@ -34,8 +34,6 @@ alias saymyname="echo $USERNAME"
 alias gcc=gcc-11
 alias g++=g++-11
 alias grep='grep --color=auto'
-alias vi=nvim
-alias vim=nvim
 
 # Adding alias for gmake as make
 alias make=gmake
