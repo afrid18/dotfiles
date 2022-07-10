@@ -8,7 +8,7 @@ source ~/.config/zsh/antigen.zsh
 antigen bundle git
 antigen bundle command-not-found
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle marlonrichert/zsh-autocomplete@main
+# antigen bundle marlonrichert/zsh-autocomplete@main
 
 # Syntax highlighting bundle.
 # antigen bundle zsh-users/zsh-syntax-highlighting
