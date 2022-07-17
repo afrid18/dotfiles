@@ -124,3 +124,6 @@ cpdir() {
 # Environment Variables(Custom defined)
 export GPG_TTY=$(tty) # For GnuPG
 #export GREP_COLOR='ms=01;04;25;36'
+
+# Starship command prompt
+eval "$(starship init zsh)"

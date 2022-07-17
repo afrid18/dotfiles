@@ -1,0 +1,20 @@
+# insert new line after every command
+add_newline = false
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Format
+format = "[Afrid ](#ffff5f)$all"
+
+[character]
+success_symbol = "[➜](#ffff5f)"
+
+[directory]
+truncation_length = 1
+truncation_symbol = '../'
+
+[line_break]
+disabled = true
+
+
+

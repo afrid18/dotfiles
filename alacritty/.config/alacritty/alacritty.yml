@@ -14,8 +14,19 @@ window:
 
 font:
   normal:
-    family: "SFMono Nerd Font"
+    family: "Hack NF"
     style: Regular
+  bold:
+    family: "Hack NF"
+    style: bold
+  italic:
+    family: "Hack NF"
+    style: italic
+  bold_italic:
+    family: "Hack NF"
+    style: bold_italic
+
+  # Font size
   size: 16.0
   use_thin_strokes: true
 
