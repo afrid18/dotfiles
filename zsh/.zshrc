@@ -64,6 +64,8 @@ alias grep='grep --color=auto'
 
 # Adding alias for gmake as make
 alias make=gmake
+alias vi=nvim # starting to use Neovim as my default editor
+alias vim=nvim
 
 # BIND KEYS
 bindkey -v

@@ -4,13 +4,22 @@ window:
   dimensions:
     columns: 133
     lines: 40
-  opacity: 0.70
+  opacity: 0.85
 
   padding:
     x: 18
     y: 16
   dynamic_padding: false
   decorations: buttonless
+
+
+# Cursor style
+cursor:
+  style:
+    shape: Block
+    blinking: Always
+  blink_interval: 500
+
 
 font:
   normal:
@@ -29,6 +38,10 @@ font:
   # Font size
   size: 16.0
   use_thin_strokes: true
+
+  offset:
+    x: 1
+    y: 3
 
 colors:
  # Default colors
