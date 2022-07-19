@@ -1,7 +1,5 @@
 # My Configurations
 
-![iterm_looks](iterm_look.png)
+![environment-overview.png](Overview of my environment)
 
-## This is how my iterm looks after having to configure tmux, vim, zshrc
-
-## As you can see tmux is currently running
+This is how my **Development Environment** looks after having to configure tmux, vim, zshrc, starship.
