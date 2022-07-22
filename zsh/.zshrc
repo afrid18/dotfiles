@@ -64,8 +64,8 @@ alias grep='grep --color=auto'
 
 # Adding alias for gmake as make
 alias make=gmake
-alias vi=nvim # starting to use Neovim as my default editor
-alias vim=nvim
+alias vi=lvim # starting to use Neovim as my default editor
+alias vim=lvim 
 
 # BIND KEYS
 bindkey -v
@@ -90,6 +90,7 @@ export PATH=/opt/homebrew/Cellar/ruby/3.1.1/lib/ruby/gems/3.1.0:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="/Users/imamkhaja/.local/share/solana/install/active_release/bin:$PATH"
 export PATH="/Users/imamkhaja/bin/:$PATH"
+export PATH="/Users/imamkhaja/.local/bin/:$PATH"
 
 
 # A CUSTOM FUNCTION TO DISPLAY ALL THE COLORS AVAILABLE
