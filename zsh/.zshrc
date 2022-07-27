@@ -130,3 +130,8 @@ export GPG_TTY=$(tty) # For GnuPG
 
 # Starship command prompt
 eval "$(starship init zsh)"
+
+# Heroku CLI autocomplete 
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/imamkhaja/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
