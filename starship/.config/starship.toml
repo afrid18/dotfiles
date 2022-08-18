@@ -16,5 +16,12 @@ truncation_symbol = '../'
 [line_break]
 disabled = true
 
+[java]
+disabled = true
 
 
+[python]
+disabled = true
+
+[C]
+disabled = true
