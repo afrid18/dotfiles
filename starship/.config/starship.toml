@@ -8,6 +8,7 @@ format = "[Afrid ](#ffff5f)$all"
 
 [character]
 success_symbol = "[➜](#ffff5f)"
+vicmd_symbol = "[VIM](bold green) "
 
 [directory]
 truncation_length = 1
