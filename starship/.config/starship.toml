@@ -24,5 +24,3 @@ disabled = true
 [python]
 disabled = true
 
-[C]
-disabled = true
