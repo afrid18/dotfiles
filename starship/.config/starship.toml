@@ -1,5 +1,5 @@
 # insert new line after every command
-add_newline = false
+add_newline = true
 
 "$schema" = 'https://starship.rs/config-schema.json'
 
