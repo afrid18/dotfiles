@@ -1,0 +1,20 @@
+[user]
+	name = Afrid Hussain
+	email = afridhussain.d@gmail.com
+	signingkey = 0DA848867B36C8A9
+
+[commit]
+	gpgsign = true
+
+[alias]
+	logg = log --oneline --graph --decorate
+
+[init]
+	defaultBranch = main
+
+[push]
+  defalut = upstream
+
+[core]
+  excludesFile = ~/.gitignore
+
