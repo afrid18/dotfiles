@@ -26,7 +26,7 @@ antigen apply
 
 
 autoload -U promptinit # initialize the prompt system promptinit
-autoload -Uz compinit && compinit
+autoload -Uz compinit
 
 # SET OPTIONS
 setopt autocd
