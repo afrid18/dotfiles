@@ -18,3 +18,5 @@
 [core]
   excludesFile = ~/.gitignore
 
+[rerere]
+	enabled = true
