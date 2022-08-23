@@ -38,7 +38,8 @@ HISTFILE=~/.zsh_history # sets the location of the history file
 promptinit
 
 # hashes of the frequently used directories
-hash -d  codedir=/Users/Imamkhaja/practice
+hash -d  codedir=/Users/imamkhaja/practice
+hash -d test=/Users/imamkhaja/practice/test
 hash -d musicdir=/Users/imamkhaja/Music
 
 # Change the prompt
