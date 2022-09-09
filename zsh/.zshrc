@@ -25,8 +25,8 @@ antigen apply
 
 
 
-autoload -U promptinit # initialize the prompt system promptinit
-autoload -Uz compinit
+# autoload -U promptinit # initialize the prompt system promptinit
+# autoload -Uz compinit
 
 # SET OPTIONS
 setopt autocd
@@ -35,7 +35,7 @@ setopt autocd
 HISTFILE=~/.zsh_history # sets the location of the history file
 
 # prompt setup
-promptinit
+# promptinit
 
 # hashes of the frequently used directories
 hash -d  codedir=/Users/imamkhaja/practice
