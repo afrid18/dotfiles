@@ -43,8 +43,8 @@ hash -d test=/Users/imamkhaja/practice/test
 hash -d musicdir=/Users/imamkhaja/Music
 
 # Change the prompt
-PROMPT='%F{228}%BAfrid%f %2~%b'
-RPS1="%F{red}%(?..(%?%))%f"
+# PROMPT='%F{228}%BAfrid%f %2~%b'
+# RPS1="%F{red}%(?..(%?%))%f"
 
 # ALIASES
 alias reload='source ~/.zshrc'
