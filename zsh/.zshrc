@@ -1,38 +1,38 @@
-# Antigen plugin manager
-source ~/.config/zsh/antigen.zsh
+# # Antigen plugin manager
+# source ~/.config/zsh/antigen.zsh
 
-# Load the oh-my-zsh's library.
-# antigen use oh-my-zsh
+# # Load the oh-my-zsh's library.
+# # antigen use oh-my-zsh
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle command-not-found
-antigen bundle zsh-users/zsh-autosuggestions
-# antigen bundle marlonrichert/zsh-autocomplete@main
+# # Bundles from the default repo (robbyrussell's oh-my-zsh).
+# antigen bundle git
+# antigen bundle command-not-found
+# antigen bundle zsh-users/zsh-autosuggestions
+# # antigen bundle marlonrichert/zsh-autocomplete@main
 
-# Syntax highlighting bundle.
-# antigen bundle zsh-users/zsh-syntax-highlighting
+# # Syntax highlighting bundle.
+# # antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Load the theme.
-# antigen theme robbyrussell
+# # Load the theme.
+# # antigen theme robbyrussell
 
-# Tell Antigen that you're done.
-antigen apply
-
-
-# End of antigen
+# # Tell Antigen that you're done.
+# antigen apply
 
 
+# # End of antigen
 
 
-# autoload -U promptinit # initialize the prompt system promptinit
-# autoload -Uz compinit
 
-# SET OPTIONS
-setopt autocd
 
-# Adding history file
-HISTFILE=~/.zsh_history # sets the location of the history file
+# # autoload -U promptinit # initialize the prompt system promptinit
+# # autoload -Uz compinit
+
+# # SET OPTIONS
+# setopt autocd
+
+# # Adding history file
+# HISTFILE=~/.zsh_history # sets the location of the history file
 
 # prompt setup
 # promptinit
@@ -64,7 +64,6 @@ alias g++=g++-11
 alias grep='grep --color=auto'
 
 # Adding alias for gmake as make
-alias make=gmake
 alias vi=lvim # starting to use Neovim as my default editor
 alias vim=lvim 
 
@@ -108,16 +107,16 @@ disco() {
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # GIT PROMPT
-autoload -Uz add-zsh-hook
-autoload -Uz add-zsh-hook vcs_info
-setopt prompt_subst
-add-zsh-hook precmd vcs_info
-zstyle ':vcs_info:git:*' formats       ' git:(%b%u%c)'
-zstyle ':vcs_info:git:*' actionformats ' git:(%b|%a%u%c)'
-PROMPT+='%B%F{red}${vcs_info_msg_0_}%f %# %b'
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr ' *'
-zstyle ':vcs_info:*' stagedstr ' +'
+# autoload -Uz add-zsh-hook
+# autoload -Uz add-zsh-hook vcs_info
+# setopt prompt_subst
+# add-zsh-hook precmd vcs_info
+# zstyle ':vcs_info:git:*' formats       ' git:(%b%u%c)'
+# zstyle ':vcs_info:git:*' actionformats ' git:(%b|%a%u%c)'
+# PROMPT+='%B%F{red}${vcs_info_msg_0_}%f %# %b'
+# zstyle ':vcs_info:*' check-for-changes true
+# zstyle ':vcs_info:*' unstagedstr ' *'
+# zstyle ':vcs_info:*' stagedstr ' +'
 
 
 # Copy present dir
@@ -133,7 +132,13 @@ export GPG_TTY=$(tty) # For GnuPG
 # Starship command prompt
 eval "$(starship init zsh)"
 
-# Heroku CLI autocomplete 
+# oh-my-zsh completion plugins and other plugins
+plugins=(
+  git
+  docker
+  docker-compose
+  kubectl
+  heroku
+  zsh-autosuggestions
+)
 
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/imamkhaja/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
