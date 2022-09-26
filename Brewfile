@@ -1,0 +1,20 @@
+brew "ack"
+brew "antigen"
+brew "figlet"
+brew "gcc"
+brew "go"
+brew "grep"
+brew "helix"
+brew "htop"
+brew "neovim"
+brew "python"
+brew "speedtest-cli"
+brew "starship"
+brew "stow"
+brew "tmux"
+brew "tmux-mem-cpu-load"
+brew "vim"
+
+cask 'notion'
+cask 'raycast'
+cask 'vlc'
