@@ -12,11 +12,9 @@ packer.startup(function(use)
   use { "ellisonleao/gruvbox.nvim" }
 
   -- Auto pairs
-  use "windwp/nvim-autopairs"
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
 
-  -- LSP
-  use 'neovim/nvim-lspconfig'
-
-  -- lua line
-  use 'hoob3rt/lualine.nvim' -- StatusLine
 end)
