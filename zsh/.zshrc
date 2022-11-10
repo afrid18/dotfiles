@@ -62,6 +62,7 @@ alias saymyname="echo $USERNAME"
 alias gcc=gcc-11
 alias g++=g++-11
 alias grep='grep --color=auto'
+alias cat=bat
 
 # Adding alias for gmake as make
 alias vi=nvim  #starting to use Neovim as my default editor
