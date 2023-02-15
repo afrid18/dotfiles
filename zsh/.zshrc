@@ -1,41 +1,18 @@
-# # Antigen plugin manager
-# source ~/.config/zsh/antigen.zsh
+# Antigen plugin manager
+source ~/.config/zsh/antigen.zsh
 
-# # Load the oh-my-zsh's library.
-# # antigen use oh-my-zsh
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+antigen bundle git
+antigen bundle command-not-found
+antigen bundle zsh-users/zsh-autosuggestions
 
-# # Bundles from the default repo (robbyrussell's oh-my-zsh).
-# antigen bundle git
-# antigen bundle command-not-found
-# antigen bundle zsh-users/zsh-autosuggestions
-# # antigen bundle marlonrichert/zsh-autocomplete@main
-
-# # Syntax highlighting bundle.
-# # antigen bundle zsh-users/zsh-syntax-highlighting
-
-# # Load the theme.
-# # antigen theme robbyrussell
-
-# # Tell Antigen that you're done.
-# antigen apply
-
-
-# # End of antigen
+# End of antigen
+antigen apply
 
 
 
-
-# # autoload -U promptinit # initialize the prompt system promptinit
-# # autoload -Uz compinit
-
-# # SET OPTIONS
-# setopt autocd
-
-# # Adding history file
-# HISTFILE=~/.zsh_history # sets the location of the history file
-
-# prompt setup
-# promptinit
+autoload -U compinit && compinit
 
 # hashes of the frequently used directories
 hash -d  codedir=/Users/imamkhaja/practice
