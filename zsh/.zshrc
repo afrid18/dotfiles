@@ -6,6 +6,7 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle command-not-found
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle "greymd/docker-zsh-completion"
 
 # End of antigen
 antigen apply
@@ -120,3 +121,11 @@ plugins=(
   zsh-autosuggestions
 )
 
+# IBMCloud CLI tab completeions
+source /usr/local/ibmcloud/autocomplete/zsh_autocomplete
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/imamkhaja/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/imamkhaja/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/imamkhaja/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/imamkhaja/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
