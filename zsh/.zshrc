@@ -5,13 +5,12 @@ source ~/.config/zsh/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle command-not-found
+antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle "greymd/docker-zsh-completion"
 
 # End of antigen
 antigen apply
-
-
 
 autoload -U compinit && compinit
 
@@ -129,3 +128,4 @@ if [ -f '/Users/imamkhaja/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/U
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/imamkhaja/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/imamkhaja/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
