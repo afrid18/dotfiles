@@ -47,3 +47,6 @@ set -gx GPG_TTY (tty)
 
 # setting prompt to starship
 eval (starship init fish)
+
+# setting vi key bindings
+fish_vi_key_bindings
