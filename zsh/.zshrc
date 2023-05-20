@@ -40,6 +40,7 @@ alias gcc=gcc-11
 alias g++=g++-11
 alias grep='grep --color=auto'
 alias cat=bat
+alias gitroot='cd $(git rev-parse --show-toplevel)'
 
 # Adding alias for gmake as make
 alias vi=nvim  #starting to use Neovim as my default editor
