@@ -18,3 +18,4 @@ brew "vim"
 cask 'notion'
 cask 'raycast'
 cask 'vlc'
+cask 'neovide'
