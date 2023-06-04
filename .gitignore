@@ -5,3 +5,4 @@
 /nvim/plugged/
 /nvim/undodir/
 /nvim/autoload/
+tmux/.config/tmux/plugins/
