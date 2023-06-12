@@ -1,6 +1,7 @@
 brew "ack"
 brew "antigen"
 brew "bat"
+brew "btop"
 brew "figlet"
 brew "gcc"
 brew "go"
