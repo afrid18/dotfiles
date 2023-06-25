@@ -55,6 +55,9 @@ export PATH=~/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 export EDITOR=vim
 
+# Adding go path
+export PATH=~/go/bin/:$PATH
+
 # ADDING C INCLUDE PATH AND LIBRARY PATH ##FOR MACBOOK USERS USING HOMEBREW AS THE PACKAGE MANAGER
 C_INCLUDE_PATH=.:/opt/homebrew/include
 LIBRARY_PATH=.:/opt/homebrew/lib
