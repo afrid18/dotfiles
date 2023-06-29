@@ -16,7 +16,7 @@ window:
 # Cursor style
 cursor:
   style:
-    shape: Block
+    shape: Beam
     blinking: Always
   blink_interval: 500
 
