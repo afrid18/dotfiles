@@ -7,7 +7,7 @@
 	gpgsign = true
 
 [alias]
-	logg = log --oneline --graph --decorate
+	log = log --oneline --graph --decorate
 
 [init]
 	defaultBranch = main
