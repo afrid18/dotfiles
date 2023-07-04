@@ -26,7 +26,7 @@ hash -d musicdir=/Users/imamkhaja/Music
 
 # ALIASES
 alias reload='source ~/.zshrc'
-alias ls='ls -GF'
+alias ls='ls -GF --color'
 alias l='ls -a'
 alias ll='ls -al'
 alias rm='rm -iIv'
@@ -54,6 +54,7 @@ bindkey -v
 # adding ~/bin path for my personal executables
 export PATH=~/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
+export PATH=~/.local/bin:$PATH
 export EDITOR=vim
 
 # Adding go path
@@ -125,8 +126,6 @@ plugins=(
   zsh-autosuggestions
 )
 
-# IBMCloud CLI tab completeions
-source /usr/local/ibmcloud/autocomplete/zsh_autocomplete
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/imamkhaja/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/imamkhaja/Downloads/google-cloud-sdk/path.zsh.inc'; fi
