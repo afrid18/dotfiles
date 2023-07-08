@@ -49,7 +49,7 @@ alias vim=nvim
 
 #################### BIND KEYS
 bindkey -v # Enter into vim mode
-bindkey "^R" history-incremental-search-backward # Just click ctrl + r to enter into incremental search
+bindkey "^B" history-incremental-pattern-search-backward # Just click ctrl + r to enter into incremental search
 
 # Vim mode search in normal mode
 bindkey -M vicmd '/' history-incremental-pattern-search-backward # Pattern based incremental backward search in vim mode
