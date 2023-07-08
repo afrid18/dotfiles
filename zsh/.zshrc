@@ -47,8 +47,17 @@ alias gitroot='cd $(git rev-parse --show-toplevel)'
 alias vi=nvim  #starting to use Neovim as my default editor
 alias vim=nvim
 
-# BIND KEYS
-bindkey -v
+#################### BIND KEYS
+bindkey -v # Enter into vim mode
+bindkey "^R" history-incremental-search-backward # Just click ctrl + r to enter into incremental search
+
+# Vim mode search in normal mode
+bindkey -M vicmd '/' history-incremental-pattern-search-backward # Pattern based incremental backward search in vim mode
+bindkey -M vicmd '?' history-incremental-pattern-search-forward # Pattern based incremental forward search in vim mode
+ 
+# vim mode search in insert mode to surf through queue
+bindkey -M viins '^R' history-incremental-pattern-search-backward
+bindkey -M viins '^F' history-incremental-pattern-search-forward
 
 # PATHS
 # adding ~/bin path for my personal executables
