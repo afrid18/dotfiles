@@ -1,6 +1,7 @@
-" source ~/.dotfiles/vim/.vimrc
-
 syntax on
+
+" Color Scheme
+colorscheme morning
 
 " Tabs and indentation
 set tabstop=4
@@ -15,7 +16,6 @@ filetype indent on
 autocmd FileType make setlocal noexpandtab
 
 " Adding leader key
-
 let mapleader = ","
 
 " Filetype plugins on
@@ -36,7 +36,7 @@ set tabstop=4
 
 " Linebreak on 500 characters
 set lbr
-set tw=500
+set tw=80
 
 set ai "Auto indent
 set si "Smart indent
@@ -55,6 +55,10 @@ set undodir=~/.config/vim/undodir
 set undofile
 set encoding=utf-8
 
+" Fast terminal
+set lazyredraw
+set ttyfast
+
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
@@ -69,21 +73,17 @@ set so=9
 set path+=**
 
 " Display all the matching files when we tab complete
-
 set wildmenu
-set incsearch
 
 
-" SETTING <C-a> <C-x> to add and subtract only for decimals
-
+" SETTING <C-a> <C-x> to add and subtract for decimals and alphabets
 set nrformats+=alpha
 
 " Mapping carriage return to stop highlighting after hitting <CR> twice
-
 nnoremap <CR> :noh<CR><CR>
 
 " Yanking into system clipboard
-set clipboard=unnamed
+set clipboard+=unnamedplus
 
 " Smart way to move between windows
 map <C-j> <C-W>j
@@ -94,14 +94,6 @@ map <C-l> <C-W>l
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-""""""""""""""""""""""""""""""
-" => Status line
-""""""""""""""""""""""""""""""
-" Always show the status line
-set laststatus=2
-
-" Format the status line
-set statusline=\%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -123,31 +115,59 @@ if has("mac") || has("macunix")
     vmap <D-k> <M-k>
 endif
 
+
+""""""""""""""""""""""""""""""
+" => Status line
+""""""""""""""""""""""""""""""
+" Always show the status line
 set laststatus=2
+set statusline=\%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+" function! GitBranch()
+"     return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+" endfunction
+"
+" function! StatuslineGit()
+"     let l:branchname = GitBranch()
+"     return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+" endfunction
 
-function! GitBranch()
-    return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+" set statusline=
+" set statusline+=%#PmenuSel#
+" set statusline+=%{StatuslineGit()}
+" set statusline+=%#LineNr#
+" set statusline+=\ %f
+" set statusline+=%m\
+" set statusline+=%=
+" set statusline+=%#CursorColumn#
+" set statusline+=\ %y
+" set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+" set statusline+=\[%{&fileformat}\]
+" set statusline+=\ %p%%
+" set statusline+=\ %l:%c
+" set statusline+=\ 
+"
+function! AddedWordsGit()
+  return system("git diff --word-diff=porcelain " . expand("%") . " 2>/dev/null | grep -e '^+[^+]' | wc -w | xargs | tr -d '\n'")
 endfunction
-
-function! StatuslineGit()
-    let l:branchname = GitBranch()
-    return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+function! DeletedWordsGit()
+  return system("git diff --word-diff=porcelain " . expand("%") . " 2>/dev/null | grep -e '^-[^-]' | wc -w | xargs | tr -d '\n'")
 endfunction
-
+function! DifferenceWordsGit()
+  return system("echo -n $(($(git diff --word-diff=porcelain " . expand("%") . " 2>/dev/null | grep -e '^+[^+]' | wc -w | xargs | tr -d '\n') - $(git diff --word-diff=porcelain " . expand("%") . " 2>/dev/null | grep -e '^-[^-]' | wc -w | xargs | tr -d '\n')))")
+endfunction
+  
 set statusline=
-set statusline+=%#PmenuSel#
-set statusline+=%{StatuslineGit()}
-set statusline+=%#LineNr#
-set statusline+=\ %f
-set statusline+=%m\
-set statusline+=%=
-set statusline+=%#CursorColumn#
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
+set statusline+=[%n] 
 set statusline+=\ 
+set statusline+=\%<%f%m
+set statusline+=\ 
+set statusline+=\%{&spelllang}
+set statusline+=\ %=
+set statusline+=\ 
+set statusline+=\%{wordcount().words}\ words
+set statusline+=\  
+set statusline+=\ %{AddedWordsGit()}
+set statusline+=\ %{DeletedWordsGit()}
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -156,26 +176,26 @@ set statusline+=\
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
-call plug#begin()
-Plug 'preservim/NERDTree'
-Plug 'preservim/nerdcommenter'
-Plug 'airblade/vim-gitgutter'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
-Plug 'pangloss/vim-javascript'
-" Plug 'othree/yajs.vim'
-" Plug 'othree/es.next.syntax.vim'
-" Plug 'codota/tabnine-vim'
-" Plug 'neoclide/coc.nvim'
-call plug#end()
+" call plug#begin()
+" Plug 'preservim/NERDTree'
+" Plug 'preservim/nerdcommenter'
+" Plug 'airblade/vim-gitgutter'
+" Plug 'jiangmiao/auto-pairs'
+" Plug 'tpope/vim-surround'
+" Plug 'pangloss/vim-javascript'
+" " Plug 'othree/yajs.vim'
+" " Plug 'othree/es.next.syntax.vim'
+" " Plug 'codota/tabnine-vim'
+" " Plug 'neoclide/coc.nvim'
+" call plug#end()
 
 
 
 " NERDTree short-hands
 
-" Start NERDTree. If a file is specified, move the cursor to its window.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+" " Start NERDTree. If a file is specified, move the cursor to its window.
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
