@@ -10,6 +10,7 @@ if [ -e "$antigenPath" ]; then
 else
     echo "-> Antigen doesn't exist"
     echo "-> Pulling antigen from internet!"
+    mkdir -p $HOME/.config/zsh
     curl -L git.io/antigen > $HOME/.config/zsh/antigen.zsh
 fi
 
