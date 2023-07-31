@@ -16,9 +16,8 @@ antigen apply
 autoload -U compinit && compinit
 
 # hashes of the frequently used directories
-hash -d  codedir=/Users/imamkhaja/practice
-hash -d test=/Users/imamkhaja/practice/test
-hash -d musicdir=/Users/imamkhaja/Music
+hash -d  codedir='/Users/imamkhaja/practice'
+hash -d testdir='/Users/imamkhaja/practice/test'
 
 # Change the prompt
 # PROMPT='%F{228}%BAfrid%f %2~%b'
@@ -60,32 +59,25 @@ bindkey -M vicmd '?' history-incremental-pattern-search-forward # Pattern based 
 bindkey -M viins '^R' history-incremental-pattern-search-backward
 bindkey -M viins '^F' history-incremental-pattern-search-forward
 
-# PATHS
-# adding ~/bin path for my personal executables
-export PATH=~/bin:$PATH
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=~/.local/bin:$PATH
-export EDITOR=vim
+export EDITOR=vim  # Default editor
 
-# Adding go path
-export PATH=~/go/bin/:$PATH
-
-# ADDING C INCLUDE PATH AND LIBRARY PATH ##FOR MACBOOK USERS USING HOMEBREW AS THE PACKAGE MANAGER
-C_INCLUDE_PATH=.:/opt/homebrew/include
-LIBRARY_PATH=.:/opt/homebrew/lib
+# C library variabls exported (installed from Brew package manager)
+C_INCLUDE_PATH=.:/opt/homebrew/include # ADDING C INCLUDE PATH AND LIBRARY PATH 
+LIBRARY_PATH=.:/opt/homebrew/lib # add Library path from homebrew package manager
 export C_INCLUDE_PATH
 export LIBRARY_PATH
 
-# Ruby gems paths
-export PATH=/Users/imamkhaja/.gem/ruby/2.1.0:$PATH
-export PATH=/Users/imamkhaja/.local/share/gem/ruby/3.1.0:$PATH
-export PATH=/opt/homebrew/lib/ruby/gems/3.1.0:$PATH
-export PATH=/opt/homebrew/Cellar/ruby/3.1.1/lib/ruby/gems/3.1.0:$PATH
-export PATH=/opt/homebrew/bin:$PATH
-export PATH="/Users/imamkhaja/.local/share/solana/install/active_release/bin:$PATH"
-export PATH="/Users/imamkhaja/bin/:$PATH"
-export PATH="/Users/imamkhaja/.local/bin/:$PATH"
+
+# PATHS
 export PATH="/opt/homebrew/sbin:$PATH"
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=~/.local/bin:$PATH
+export PATH=~/bin:$PATH
+export PATH=~/go/bin/:$PATH # Adding go path
+export PATH=/Users/imamkhaja/.gem/ruby/2.1.0:$PATH                    # Ruby gems path
+export PATH=/Users/imamkhaja/.local/share/gem/ruby/3.1.0:$PATH        # Ruby gems path
+export PATH=/opt/homebrew/Cellar/ruby/3.1.1/lib/ruby/gems/3.1.0:$PATH # Ruby gems path
+
 
 
 # A CUSTOM FUNCTION TO DISPLAY ALL THE COLORS AVAILABLE
