@@ -2,13 +2,14 @@
 source ~/.config/zsh/antigen.zsh
 
 # Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-antigen bundle git
+antigen bundle agkozak/zsh-z
 antigen bundle command-not-found
-antigen bundle zsh-users/zsh-completions
+antigen bundle git
+antigen bundle greymd/docker-zsh-completion
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle "greymd/docker-zsh-completion"
+antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting # Plugin for syntax highlighting
+antigen use oh-my-zsh
 
 # End of antigen
 antigen apply
