@@ -37,8 +37,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias saymyname="echo $USERNAME"
-alias gcc=gcc-11
-alias g++=g++-11
+alias gcc=gcc-13
+alias g++=g++-13
 alias grep='grep --color=auto'
 alias cat=bat
 alias gitroot='cd $(git rev-parse --show-toplevel)'
