@@ -1,7 +1,7 @@
 syntax on
 
 " Color Scheme
-colorscheme morning
+" colorscheme morning
 
 " Tabs and indentation
 set tabstop=4
