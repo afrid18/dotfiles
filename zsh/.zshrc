@@ -89,6 +89,16 @@ disco() {
     printf '\n'
 }
 
+# A custom function to get weather
+weather() {
+    local place="$1"
+    if [[ -z "$1" ]]; then
+        echo "no args provided. Please give a Place!"
+        return 1
+    fi
+    local base_string="wttr.in/$1"
+    curl $base_string
+}
 
 # AUTO COMPLETE FOR SMALL CASE
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
