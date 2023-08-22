@@ -7,8 +7,8 @@ window:
   opacity: 0.85
 
   padding:
-    x: 18
-    y: 16
+    x: 8
+    y: 8
   dynamic_padding: false
   decorations: buttonless
 
@@ -70,3 +70,7 @@ colors:
    magenta: '#a47de9'
    cyan:    '#99faf2'
    white:   '#ffffff'
+
+
+  # Make Option key behave as Alt (MacOS only)
+window.option_as_alt: Both

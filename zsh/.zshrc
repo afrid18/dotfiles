@@ -60,7 +60,7 @@ bindkey -M vicmd '?' history-incremental-pattern-search-forward # Pattern based 
 bindkey -M viins '^R' history-incremental-pattern-search-backward
 bindkey -M viins '^F' history-incremental-pattern-search-forward
 
-export EDITOR=vim  # Default editor
+export EDITOR=nvim  # Default editor
 
 # C library variabls exported (installed from Brew package manager)
 C_INCLUDE_PATH=.:/opt/homebrew/include # ADDING C INCLUDE PATH AND LIBRARY PATH 
