@@ -14,6 +14,6 @@ else
     curl -L git.io/antigen > $HOME/.config/zsh/antigen.zsh
 fi
 
-stow -R alacritty starship tmux vim git zsh nvim --verbose=1 --target=$HOME
+stow -R kitty alacritty starship tmux vim git zsh nvim --verbose=1 --target=$HOME
 echo "Successfully stowed----------->"
 
