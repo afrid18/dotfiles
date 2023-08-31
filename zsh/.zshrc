@@ -74,11 +74,14 @@ export PATH="/opt/homebrew/sbin:$PATH"
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=~/bin:$PATH
-export PATH=~/go/bin/:$PATH # Adding go path
+# Adding go path
+export GOPATH=~/go/bin
+export PATH=$GOPATH:$PATH 
+
 export PATH=/Users/imamkhaja/.gem/ruby/2.1.0:$PATH                    # Ruby gems path
 export PATH=/Users/imamkhaja/.local/share/gem/ruby/3.1.0:$PATH        # Ruby gems path
 export PATH=/opt/homebrew/Cellar/ruby/3.1.1/lib/ruby/gems/3.1.0:$PATH # Ruby gems path
-export PATH=/Users/imamkhaja/.cargo/bin/:$PATH
+export PATH=/Users/imamkhaja/.cargo/bin:$PATH
 
 
 
@@ -146,4 +149,3 @@ if [ -f '/Users/imamkhaja/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/U
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/imamkhaja/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/imamkhaja/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
