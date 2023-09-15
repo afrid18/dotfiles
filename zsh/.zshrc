@@ -131,7 +131,10 @@ export GPG_TTY=$(tty) # For GnuPG
 #export GREP_COLOR='ms=01;04;25;36'
 
 # Starship command prompt
-eval "$(starship init zsh)"
+if [[ -z "$STARSHIP_SOURCED" ]]; then
+    eval "$(starship init zsh)"
+    export STARSHIP_SOURCED=1
+fi
 
 # oh-my-zsh completion plugins and other plugins
 plugins=(
@@ -149,3 +152,10 @@ if [ -f '/Users/imamkhaja/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/U
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/imamkhaja/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/imamkhaja/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# bun completions
+[ -s "/Users/imamkhaja/.bun/_bun" ] && source "/Users/imamkhaja/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
