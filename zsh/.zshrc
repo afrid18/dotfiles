@@ -130,10 +130,15 @@ cpdir() {
 export GPG_TTY=$(tty) # For GnuPG
 #export GREP_COLOR='ms=01;04;25;36'
 
-# Starship command prompt
-if [[ -z "$STARSHIP_SOURCED" ]]; then
+# Check if STARSHIP_SOURCED is not set or less than 2
+if [[ -z "$STARSHIP_SOURCED" || "$STARSHIP_SOURCED" -lt 2 ]]; then
+    if [[ -z "$STARSHIP_SOURCED" ]]; then
+        export STARSHIP_SOURCED=1
+    else
+        ((STARSHIP_SOURCED++))
+    fi
+
     eval "$(starship init zsh)"
-    export STARSHIP_SOURCED=1
 fi
 
 # oh-my-zsh completion plugins and other plugins
