@@ -82,6 +82,11 @@ return {
       on_attach = on_attach,
     })
 
+    -- Clangd setup
+    lspconfig["clangd"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
     -- configure python server
     lspconfig["pyright"].setup({
       capabilities = capabilities,

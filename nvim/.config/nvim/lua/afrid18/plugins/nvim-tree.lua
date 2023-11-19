@@ -18,6 +18,10 @@ return {
         width = 30,
         -- relativenumber = true,
       },
+      -- Update focused file in Nvim-tree
+      update_focused_file = {
+        enable = true, -- Automatically update the focused file in nvim-tree when the file is changed
+      },
       -- change folder arrow icons
       renderer = {
         indent_markers = {
@@ -43,16 +47,32 @@ return {
         },
       },
       filters = {
-        custom = { ".DS_Store" },
+        custom = { 
+          ".DS_Store",
+          "node_modules",
+       },
       },
       git = {
         ignore = false,
       },
     })
 
+    mappings = {
+      list = {
+        {
+          key = "<C-t>",
+          action = "whatever",
+          action_cb = function(node)
+              vim.cmd("tabnew " .. vim.fn.fnameescape(node.absolute_path))
+          end,
+        },
+      }
+    }
+
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
 
+    keymap.set("i", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
     keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
     keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
     keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" }) -- collapse file explorer
