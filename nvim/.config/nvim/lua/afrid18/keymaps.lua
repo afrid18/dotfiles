@@ -6,6 +6,12 @@ local opts = { noremap = true, silent = true }
 
 --------------------- General Keymaps -------------------
 
+-- Front and End
+-- vim.api.nvim_set_keymap("n", "E", "$", {noremap=false})
+-- vim.api.nvim_set_keymap("n", "B", "^", {noremap=false})
+keymap.set("n", "E", "$")
+keymap.set("n", "B", "^")
+
 -- use jk to exit insert mode
 -- keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
@@ -15,12 +21,6 @@ keymap.set("n", "<CR>", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- delete single character without copying into register
 keymap.set("n", "x", '"_x')
-
--- window management
-keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
-keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
 -- Tab Management
 -- keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
@@ -52,19 +52,26 @@ keymap.set("n", "<Leader>O", "O<Esc>^Da", opts)
 -- New tab
 keymap.set("n", "te", ":tabedit ")
 keymap.set("n", "tx", ":tabclose<Return>", opts)
-keymap.set("n", "<tab>", ":tabnext<Return>", opts)
-keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
+keymap.set("n", "tn", ":tabnext<Return>", opts)
+keymap.set("n", "tt", ":tabprev<Return>", opts)
 keymap.set("n", "tf", ":tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
-
--- Split window
-keymap.set("n", "ss", ":split<Return>", opts)
-keymap.set("n", "sv", ":vsplit<Return>", opts)
 
 -- Move window
 keymap.set("n", "sh", "<C-w>h")
 keymap.set("n", "sk", "<C-w>k")
 keymap.set("n", "sj", "<C-w>j")
 keymap.set("n", "sl", "<C-w>l")
+
+-- window management
+keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
+keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
+keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
+keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
+
+-- Split window
+keymap.set("n", "ss", ":split<Return>", opts)
+keymap.set("n", "sv", ":vsplit<Return>", opts)
+
 
 -- Resize window
 keymap.set("n", "<C-w><left>", "<C-w><")
