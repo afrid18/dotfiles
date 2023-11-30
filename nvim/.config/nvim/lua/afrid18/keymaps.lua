@@ -6,11 +6,16 @@ local opts = { noremap = true, silent = true }
 
 --------------------- General Keymaps -------------------
 
--- Front and End
--- vim.api.nvim_set_keymap("n", "E", "$", {noremap=false})
--- vim.api.nvim_set_keymap("n", "B", "^", {noremap=false})
-keymap.set("n", "E", "$")
-keymap.set("n", "B", "^")
+-- move to start and ending of the line
+keymap.set({ "n", "v" }, "E", "$")
+keymap.set({ "n", "v" }, "B", "^")
+
+-- Indenting
+keymap.set("v", "<", "<gv", { silent = true, noremap = true })
+keymap.set("v", ">", ">gv", { silent = true, noremap = true })
+
+-- Show Full File-Path
+keymap.set("n", "<leader>pa", "<cmd>echo expand('%:p')<CR>")
 
 -- use jk to exit insert mode
 -- keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
@@ -63,9 +68,9 @@ keymap.set("n", "sj", "<C-w>j")
 keymap.set("n", "sl", "<C-w>l")
 
 -- window management
-keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
+keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })     -- split window vertically
+keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })   -- split window horizontally
+keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })      -- make split windows equal width & height
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
 -- Split window
@@ -81,5 +86,5 @@ keymap.set("n", "<C-w><down>", "<C-w>-")
 
 -- Diagnostics
 keymap.set("n", "<C-j>", function()
-	vim.diagnostic.goto_next()
+  vim.diagnostic.goto_next()
 end, opts)

@@ -5,22 +5,11 @@ return {
     local lualine = require("lualine")
     lualine.setup({
       options = {
-        theme = "jellybeans",
+        theme = "codedark",
         icons_enabled = true,
         component_separators = '|',
         section_separators = '',
-      },
-      sections = {
-        lualine_x = {
-          {
-            color = { fg = "#ff9e64" },
-          }
-        },
-        lualine_a = {
-          {
-            'buffers',
-          }
-        }
+        globalstatus = true,
       },
     })
   end,
