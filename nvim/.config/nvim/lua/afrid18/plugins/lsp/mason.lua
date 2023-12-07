@@ -27,10 +27,11 @@ return {
     mason_lspconfig.setup({
       -- list of language servers for mason to install
       ensure_installed = {
-        "efm",
+        -- "efm",
         "emmet_ls",
         "html",
         "lua_ls",
+        "marksman",
         "pyright",
         "tsserver",
       },
@@ -40,12 +41,15 @@ return {
 
     mason_tool_installer.setup({
       ensure_installed = {
-       --  "prettier", -- prettier formatter
-       --  "stylua", -- lua formatter
-       --  "isort", -- python formatter
-       --  "black", -- python formatter
-       --  "pylint", -- python linter
-       --  "eslint_d", -- js linter
+        -- Formatters
+        "prettier", -- prettier formatter
+        "ruff", -- python formatter
+        "stylua", -- lua formatter
+
+        -- Linters --
+        "eslint_d", -- js linter
+        "flake8", -- python linter
+        "pylint", -- python linter
       },
     })
   end,
