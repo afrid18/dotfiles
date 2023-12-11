@@ -43,13 +43,14 @@ return {
       ensure_installed = {
         -- Formatters
         "prettier", -- prettier formatter
-        "ruff", -- python formatter
-        "stylua", -- lua formatter
+        "ruff",     -- python formatter
+        "stylua",   -- lua formatter
 
         -- Linters --
         "eslint_d", -- js linter
-        "flake8", -- python linter
-        "pylint", -- python linter
+        "flake8",   -- python linter
+        "pylint",   -- python linter
+        "cpplint"   -- c++ linter
       },
     })
   end,

@@ -5,6 +5,7 @@ vim.opt.fileencoding = "utf-8"
 vim.opt.number = true
 
 vim.opt.relativenumber = true
+vim.opt.signcolumn = "yes"
 vim.opt.numberwidth = 4
 vim.opt.incsearch = true
 vim.opt.smartcase = true

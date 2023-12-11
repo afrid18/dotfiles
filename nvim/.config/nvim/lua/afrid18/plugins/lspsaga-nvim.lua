@@ -13,6 +13,7 @@ return {
 			definition_action_keys = {
 				edit = "<CR>",
 			},
+      extend_gitsigns = true,
 		})
 	end,
 	dependencies = {

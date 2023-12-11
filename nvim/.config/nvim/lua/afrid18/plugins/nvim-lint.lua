@@ -11,6 +11,7 @@ return {
       javascriptreact = { "eslint_d" },
       typescriptreact = { "eslint_d" },
       python = { "ruff", "pylint", "flake8" },
+      cpp = { "cpplint" },
     }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
@@ -27,4 +28,3 @@ return {
     end, { desc = "Trigger linting for current file" })
   end,
 }
-
