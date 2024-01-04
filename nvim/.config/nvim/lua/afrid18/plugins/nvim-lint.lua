@@ -14,6 +14,13 @@ return {
       cpp = { "cpplint" },
     }
 
+    -- Ignore eslint error when there is no .eslintrc present
+    require('lint').linters.eslint_d = {
+      cmd = 'eslint_d',
+      stdin = true,
+      ignore_exitcode = true,
+    }
+
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
     vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {

@@ -61,6 +61,15 @@ keymap.set("n", "tn", ":tabnext<Return>", opts)
 keymap.set("n", "tt", ":tabprev<Return>", opts)
 keymap.set("n", "tf", ":tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
+-- Buffers movement
+vim.keymap.set("n", "[b", "<cmd>bprevious<cr>", {
+  desc = "Prev buffer",
+})
+
+vim.keymap.set("n", "]b", "<cmd>bnext<cr>", {
+  desc = "Next buffer",
+})
+
 -- Move window
 keymap.set("n", "sh", "<C-w>h")
 keymap.set("n", "sk", "<C-w>k")

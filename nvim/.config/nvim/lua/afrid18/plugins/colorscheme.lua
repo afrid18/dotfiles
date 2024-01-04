@@ -20,7 +20,7 @@ return {
   config = function()
     -- load the colorscheme here
     vim.cmd([[colorscheme gruvbox]])
-    vim.cmd('highlight ColorColumn guibg=#9e9da1')
+    vim.cmd('highlight ColorColumn guibg=#5c5a5a')
 
     -- Toggle transparent background
 
