@@ -9,6 +9,7 @@ return {
         icons_enabled = true,
         component_separators = '|',
         section_separators = '',
+        -- best to work with multi windows and panes
         globalstatus = true,
       },
     })

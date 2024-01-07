@@ -4,7 +4,6 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    "creativenull/efmls-configs-nvim",
   },
   config = function()
     -- import lspconfig plugin
@@ -82,6 +81,13 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    
+    -- configure java server
+    lspconfig["jdtls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup({
       capabilities = capabilities,

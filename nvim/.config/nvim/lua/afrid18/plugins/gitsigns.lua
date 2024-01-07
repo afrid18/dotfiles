@@ -2,7 +2,6 @@ return {
   "lewis6991/gitsigns.nvim",
   event = "BufReadPre",
   opts = function()
-    --- @type Gitsigns.Config
     local C = {
       on_attach = function(buffer)
         local gs = package.loaded.gitsigns
