@@ -5,6 +5,7 @@ vim.opt.fileencoding = "utf-8"
 vim.opt.number = true
 
 vim.opt.relativenumber = true
+-- add spaces for signs
 vim.opt.signcolumn = "yes"
 vim.opt.numberwidth = 4
 vim.opt.incsearch = true
@@ -25,7 +26,6 @@ vim.opt.cmdheight = 1
 vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.scrolloff = 10
-vim.opt.shell = "fish"
 vim.opt.backupskip = { "/tmp/*", "/private/tmp/*" }
 vim.opt.inccommand = "split"
 vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
@@ -45,6 +45,9 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.colorcolumn = "80"
 vim.opt.nrformats:append("alpha") -- increment letters
 
+-- theme setup
+vim.cmd('highlight Normal ctermbg=black')
+vim.cmd('highlight NonText ctermbg=black')
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
@@ -55,10 +58,6 @@ vim.opt.formatoptions:append({ "r" })
 
 -- vim.cmd([[au BufNewFile,BufRead *.astro setf astro]])
 -- vim.cmd([[au BufNewFile,BufRead Podfile setf ruby]])
-
-if vim.fn.has("nvim-0.8") == 1 then
-	vim.opt.cmdheight = 0
-end
 
 
 -- Custom function to copy current (relative for project)filepath

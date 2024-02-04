@@ -14,7 +14,8 @@ return {
             return { "isort", "black" }
           end
         end,
-        java = { "google-java-format" }
+        java = { "google-java-format" },
+        -- go = { "gofmt" }
       },
       -- format_on_save = {
       --   lsp_fallback = true,
