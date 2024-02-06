@@ -14,7 +14,15 @@ return {
         edit = "<CR>",
       },
       extend_gitsigns = true,
+      -- Turn off light bulb
+      lightbulb = {
+        enable = false
+      },
     })
+    -- saga specific background color
+    vim.cmd([[
+    highlight SagaNormal guibg=COLOR
+    ]])
   end,
   dependencies = {
     "nvim-treesitter/nvim-treesitter",

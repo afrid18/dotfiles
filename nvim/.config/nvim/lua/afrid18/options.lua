@@ -22,7 +22,7 @@ vim.opt.undofile = true
 vim.opt.updatetime = 250
 vim.opt.showcmd = true
 vim.opt.fillchars = { eob = " " }
-vim.opt.cmdheight = 1
+vim.opt.cmdheight = 0
 vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.scrolloff = 10
@@ -60,18 +60,3 @@ vim.opt.formatoptions:append({ "r" })
 -- vim.cmd([[au BufNewFile,BufRead Podfile setf ruby]])
 
 
--- Custom function to copy current (relative for project)filepath
-local function copy_relative_path()
-  -- Get the current file path
-  local file_path = vim.fn.expand('%')
-  -- Get the current working directory
-  local cwd = vim.fn.getcwd()
-  -- Find the relative path
-  local relative_path = vim.fn.fnamemodify(file_path, ':.:.')
-  -- Copy the relative path to the '+' register (system clipboard)
-  vim.fn.setreg('+', relative_path)
-  -- Optional: Print a message to confirm the action
-  print('Relative path copied: ' .. relative_path)
-end
-vim.api.nvim_create_user_command('CopyRelativePath', copy_relative_path, {})
-vim.api.nvim_set_keymap('n', '<leader>cp', '<cmd>CopyRelativePath<CR>', { noremap = true, silent = true })
