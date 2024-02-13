@@ -22,5 +22,22 @@
 --
 
 return {
-  "daschw/leaf.nvim"
+  "daschw/leaf.nvim",
+  config = function()
+    require("leaf").setup({
+      underlineStyle = "undercurl",
+      commentStyle = "italic",
+      functionStyle = "NONE",
+      keywordStyle = "NONE",
+      statementStyle = "bold",
+      typeStyle = "NONE",
+      variablebuiltinStyle = "NONE",
+      transparent = false,
+      colors = {},
+      overrides = {},
+      theme = "dark", -- default, based on vim.o.background, alternatives: "light", "dark"
+      contrast = "high", -- default, alternatives: "medium", "high"
+    })
+    vim.cmd("colorscheme leaf")
+  end
 }
