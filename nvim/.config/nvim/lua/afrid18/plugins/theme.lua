@@ -39,5 +39,6 @@ return {
       contrast = "high", -- default, alternatives: "medium", "high"
     })
     vim.cmd("colorscheme leaf")
+    vim.cmd("highlight ColorColumn guibg=#3e403f")
   end
 }
