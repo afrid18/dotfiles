@@ -3,8 +3,8 @@ vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 
 vim.opt.number = true
-
 vim.opt.relativenumber = true
+vim.cmd("let &stc='%=%{v:relnum?v:relnum:v:lnum} '") -- right align current line number with relative line numbers
 -- add spaces for signs
 vim.opt.signcolumn = "yes"
 vim.opt.numberwidth = 4
@@ -45,9 +45,9 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.colorcolumn = "80"
 vim.opt.nrformats:append("alpha") -- increment letters
 
--- theme setup
-vim.cmd('highlight Normal ctermbg=black')
-vim.cmd('highlight NonText ctermbg=black')
+-- -- theme setup
+-- vim.cmd('highlight Normal ctermbg=black')
+-- vim.cmd('highlight NonText ctermbg=black')
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
