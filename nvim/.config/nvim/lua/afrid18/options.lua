@@ -22,7 +22,7 @@ vim.opt.undofile = true
 vim.opt.updatetime = 250
 vim.opt.showcmd = true
 vim.opt.fillchars = { eob = " " }
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 1
 vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.scrolloff = 10
