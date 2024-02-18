@@ -31,6 +31,9 @@ alias l='ls -a'
 alias ll='ls -al'
 alias rm='rm -iIv'
 alias python='python3'
+if command -v python3.12 >/dev/null  2>&1; then
+    alias python='python3.12'
+fi
 alias pip='pip3'
 alias tmux='tmux -2'
 alias ..='cd ..'
@@ -75,7 +78,8 @@ export PATH=/opt/homebrew/bin:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=~/bin:$PATH
 # Adding go path
-export GOPATH=~/go/bin
+export GOPATH=~/go
+export GOBIN=~/go/bin
 export PATH=$GOPATH:$PATH 
 
 export PATH=/Users/imamkhaja/.gem/ruby/2.1.0:$PATH                    # Ruby gems path
