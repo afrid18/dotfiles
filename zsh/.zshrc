@@ -31,9 +31,9 @@ alias l='ls -a'
 alias ll='ls -al'
 alias rm='rm -iIv'
 alias python='python3'
-if command -v python3.12 >/dev/null  2>&1; then
-    alias python='python3.12'
-fi
+# if command -v python3.12 >/dev/null  2>&1; then
+#     alias python='python3.12'
+# fi
 alias pip='pip3'
 alias tmux='tmux -2'
 alias ..='cd ..'
