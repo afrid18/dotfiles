@@ -40,5 +40,8 @@ return {
     })
     vim.cmd("colorscheme leaf")
     vim.cmd("highlight ColorColumn guibg=#3e403f")
+    vim.cmd("se cursorline")
+    vim.cmd("highlight CursorLine guibg=none")
+    -- vim.cmd("highlight CursorLineNR guifg=#e0dba2")
   end
 }
