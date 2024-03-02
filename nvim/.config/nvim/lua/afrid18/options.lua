@@ -4,8 +4,6 @@ vim.opt.fileencoding = "utf-8"
 
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.cmd("let &stc='%=%{v:relnum?v:relnum:v:lnum} '") -- right align current line number with relative line numbers
--- add spaces for signs
 vim.opt.signcolumn = "yes"
 vim.opt.numberwidth = 4
 vim.opt.incsearch = true
