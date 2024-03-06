@@ -87,7 +87,7 @@ export PATH=/Users/imamkhaja/.local/share/gem/ruby/3.1.0:$PATH        # Ruby gem
 export PATH=/opt/homebrew/Cellar/ruby/3.1.1/lib/ruby/gems/3.1.0:$PATH # Ruby gems path
 export PATH=/Users/imamkhaja/.cargo/bin:$PATH                         # RUST Crates executables
 
-# export TERM=xterm-256color
+export TERM=xterm-256color
 
 # A CUSTOM FUNCTION TO DISPLAY ALL THE COLORS AVAILABLE
 disco() {
