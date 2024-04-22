@@ -42,7 +42,7 @@ vim.opt.splitkeep = "cursor"
 vim.opt.mouse = ""
 vim.opt.clipboard = "unnamedplus"
 vim.opt.colorcolumn = "80"
-vim.opt.nrformats:append("alpha") -- increment letters
+-- vim.opt.nrformats:append("alpha") -- increment letters
 
 -- -- theme setup
 -- vim.cmd('highlight Normal ctermbg=black')

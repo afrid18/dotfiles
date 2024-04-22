@@ -7,8 +7,8 @@ local opts = { noremap = true, silent = true }
 --------------------- General Keymaps -------------------
 
 -- move to start and ending of the line
-keymap.set({ "n", "v" }, "E", "$")
-keymap.set({ "n", "v" }, "B", "^")
+-- keymap.set({ "n", "v" }, "E", "$")
+-- keymap.set({ "n", "v" }, "B", "^")
 
 -- Indenting
 keymap.set("v", "<", "<gv", { silent = true, noremap = true })

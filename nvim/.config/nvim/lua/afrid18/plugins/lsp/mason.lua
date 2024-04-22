@@ -51,7 +51,6 @@ return {
         -- Linters --
         "eslint_d", -- js linter
         "flake8",   -- python linter
-        "pylint",   -- python linter
         "cpplint"   -- c++ linter
       },
     })

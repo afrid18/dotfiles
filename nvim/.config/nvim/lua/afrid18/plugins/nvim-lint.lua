@@ -10,9 +10,9 @@ return {
       typescript = { "eslint_d" },
       javascriptreact = { "eslint_d" },
       typescriptreact = { "eslint_d" },
-      python = { "ruff", "flake8" },
+      python = { "flake8" },
       cpp = { "cpplint" },
-      java = { "checkstyle" },
+      -- java = { "checkstyle" },
     }
 
     -- Ignore eslint error when there is no .eslintrc present
