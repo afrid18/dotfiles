@@ -17,7 +17,7 @@ antigen apply
 autoload -U compinit && compinit
 
 # hashes of the frequently used directories
-hash -d  codedir='/Users/imamkhaja/practice'
+hash -d codedir='/Users/imamkhaja/practice'
 hash -d testdir='/Users/imamkhaja/practice/test'
 
 # Change the prompt
@@ -58,7 +58,7 @@ bindkey "^B" history-incremental-pattern-search-backward # Just click ctrl + r t
 # Vim mode search in normal mode
 bindkey -M vicmd '/' history-incremental-pattern-search-backward # Pattern based incremental backward search in vim mode
 bindkey -M vicmd '?' history-incremental-pattern-search-forward # Pattern based incremental forward search in vim mode
- 
+
 # vim mode search in insert mode to surf through queue
 bindkey -M viins '^R' history-incremental-pattern-search-backward
 bindkey -M viins '^F' history-incremental-pattern-search-forward
@@ -91,21 +91,21 @@ export TERM=xterm-256color
 
 # A CUSTOM FUNCTION TO DISPLAY ALL THE COLORS AVAILABLE
 disco() {
-    for i in {0..255}; do
-        printf "\x1b[38;5;${i}m${i}\t"
-    done
-    printf '\n'
+  for i in {0..255}; do
+    printf "\x1b[38;5;${i}m${i}\t"
+  done
+  printf '\n'
 }
 
 # A custom function to get weather
 weather() {
-    local place="$1"
-    if [[ -z "$1" ]]; then
-        echo "no args provided. Please give a Place!"
-        return 1
-    fi
-    local base_string="wttr.in/$1"
-    curl $base_string
+  local place="$1"
+  if [[ -z "$1" ]]; then
+    echo "no args provided. Please give a Place!"
+    return 1
+  fi
+  local base_string="wttr.in/$1"
+  curl $base_string
 }
 
 # AUTO COMPLETE FOR SMALL CASE
@@ -126,7 +126,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Copy present dir
 cpdir() {
-    pwd | pbcopy
+  pwd | pbcopy
 }
 
 
@@ -136,13 +136,13 @@ export GPG_TTY=$(tty) # For GnuPG
 
 # Check if STARSHIP_SOURCED is not set or less than 2
 if [[ -z "$STARSHIP_SOURCED" || "$STARSHIP_SOURCED" -lt 2 ]]; then
-    if [[ -z "$STARSHIP_SOURCED" ]]; then
-        export STARSHIP_SOURCED=1
-    else
-        ((STARSHIP_SOURCED++))
-    fi
+  if [[ -z "$STARSHIP_SOURCED" ]]; then
+    export STARSHIP_SOURCED=1
+  else
+    ((STARSHIP_SOURCED++))
+  fi
 
-    eval "$(starship init zsh)"
+  eval "$(starship init zsh)"
 fi
 
 # oh-my-zsh completion plugins and other plugins
