@@ -155,6 +155,20 @@ plugins=(
   zsh-autosuggestions
 )
 
+# load aichat if there is aichat command
+if command -v aichat &> /dev/null; then
+  _aichat_zsh() {
+    if [[ -n "$BUFFER" ]]; then
+      local _old=$BUFFER
+      BUFFER+="⌛"
+      zle -I && zle redisplay
+      BUFFER=$(aichat -e "$_old")
+      zle end-of-line
+    fi
+  }
+  zle -N _aichat_zsh
+  bindkey '\ee' _aichat_zsh
+fi
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/imamkhaja/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/imamkhaja/Downloads/google-cloud-sdk/path.zsh.inc'; fi
