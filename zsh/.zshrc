@@ -80,7 +80,7 @@ export PATH=~/bin:$PATH
 # Adding go path
 export GOPATH=~/go
 export GOBIN=~/go/bin
-export PATH=$GOPATH:$PATH 
+export PATH=$GOPATH:$GOBIN:$PATH 
 
 export PATH=/Users/imamkhaja/.gem/ruby/2.1.0:$PATH                    # Ruby gems path
 export PATH=/Users/imamkhaja/.local/share/gem/ruby/3.1.0:$PATH        # Ruby gems path
