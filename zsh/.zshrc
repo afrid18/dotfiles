@@ -1,18 +1,29 @@
-# Antigen plugin manager
-source ~/.config/zsh/antigen.zsh
+# Set the ZDOTDIR to the home directory
+export ZDOTDIR="${HOME}"
 
-# Load the oh-my-zsh's library.
-antigen bundle agkozak/zsh-z
-antigen bundle command-not-found
-antigen bundle git
-antigen bundle greymd/docker-zsh-completion
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-syntax-highlighting # Plugin for syntax highlighting
-antigen use oh-my-zsh
+# Clone antidote if necessary.
+[[ -e ${ZDOTDIR:-~}/.antidote ]] ||
+  git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
-# End of antigen
-antigen apply
+# Source antidote.
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+
+# Initialize antidote's dynamic mode, which changes `antidote bundle`
+# from static mode.
+source <(antidote init)
+
+# all the plugins that I use with antidote
+antidote bundle agkozak/zsh-z
+antidote bundle greymd/docker-zsh-completion
+antidote bundle zsh-users/zsh-autosuggestions
+antidote bundle zsh-users/zsh-completions
+antidote bundle zsh-users/zsh-syntax-highlighting # Plugin for syntax highlighting
+antidote bundle getantidote/use-omz
+antidote bundle ohmyzsh/ohmyzsh path:plugins/git
+antidote bundle ohmyzsh/ohmyzsh path:plugins/docker
+antidote bundle ohmyzsh/ohmyzsh path:plugins/docker-compose
+antidote bundle ohmyzsh/ohmyzsh path:plugins/kubectl
+
 
 autoload -U compinit && compinit
 
@@ -135,25 +146,17 @@ export GPG_TTY=$(tty) # For GnuPG
 #export GREP_COLOR='ms=01;04;25;36'
 
 # Check if STARSHIP_SOURCED is not set or less than 2
-if [[ -z "$STARSHIP_SOURCED" || "$STARSHIP_SOURCED" -lt 2 ]]; then
-  if [[ -z "$STARSHIP_SOURCED" ]]; then
-    export STARSHIP_SOURCED=1
-  else
-    ((STARSHIP_SOURCED++))
-  fi
+# if [[ -z "$STARSHIP_SOURCED" || "$STARSHIP_SOURCED" -lt 2 ]]; then
+#   if [[ -z "$STARSHIP_SOURCED" ]]; then
+#     export STARSHIP_SOURCED=1
+#   else
+#     ((STARSHIP_SOURCED++))
+#   fi
+# 
+#   eval "$(starship init zsh)"
+# fi
 
-  eval "$(starship init zsh)"
-fi
-
-# oh-my-zsh completion plugins and other plugins
-plugins=(
-  git
-  docker
-  docker-compose
-  kubectl
-  heroku
-  zsh-autosuggestions
-)
+eval "$(starship init zsh)"
 
 # load aichat if there is aichat command
 if command -v aichat &> /dev/null; then
@@ -176,9 +179,7 @@ if [ -f '/Users/imamkhaja/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/U
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/imamkhaja/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/imamkhaja/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
-# bun completions
-[ -s "/Users/imamkhaja/.bun/_bun" ] && source "/Users/imamkhaja/.bun/_bun"
-
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+source "/Users/imamkhaja/.wasmedge/env"

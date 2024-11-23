@@ -33,7 +33,7 @@ return {
         "lua_ls",
         "marksman",
         "pyright",
-        "tsserver",
+        "ts_ls",
         "jdtls",
       },
       -- auto-install configured servers (with lspconfig)
