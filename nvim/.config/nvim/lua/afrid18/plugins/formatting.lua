@@ -15,7 +15,7 @@ return {
           end
         end,
         java = { "google-java-format" },
-        -- go = { "gofmt" }
+        go = { "gofmt" }
       },
       -- format_on_save = {
       --   lsp_fallback = true,
