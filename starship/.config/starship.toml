@@ -39,3 +39,6 @@ disabled = true
 
 [bun]
 disabled = true
+
+[aws]
+disabled = true
