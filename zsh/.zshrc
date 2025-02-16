@@ -25,6 +25,7 @@ antidote bundle ohmyzsh/ohmyzsh path:plugins/docker-compose
 antidote bundle ohmyzsh/ohmyzsh path:plugins/kubectl
 
 
+# autoload to load the completion scripts
 autoload -U compinit && compinit
 
 # hashes of the frequently used directories
@@ -172,14 +173,3 @@ if command -v aichat &> /dev/null; then
   zle -N _aichat_zsh
   bindkey '\ee' _aichat_zsh
 fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/imamkhaja/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/imamkhaja/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/imamkhaja/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/imamkhaja/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-source "/Users/imamkhaja/.wasmedge/env"

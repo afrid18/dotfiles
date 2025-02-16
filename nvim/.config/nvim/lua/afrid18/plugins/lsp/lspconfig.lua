@@ -14,7 +14,7 @@ return {
     local keymap = vim.keymap -- for conciseness
 
     -- on_attach function
-    local on_attach = function(client, bufnr)
+    local custom_on_attach = function(client, bufnr)
       local opts = { noremap = true, silent = true, buffer = bufnr }
       keymap.set("n", "<leader>fd", "<cmd>Lspsaga finder<CR>", opts)
       keymap.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts)
@@ -31,7 +31,7 @@ return {
       local lsp_opts = { noremap = true, silent = true }
       keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", lsp_opts)       -- show definition, references
       keymap.set("n", "gD", vim.lsp.buf.declaration, lsp_opts)                   -- go to declaration
-      keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", { lsp_opts })  -- show lsp definitions
+      keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", lsp_opts)  -- show lsp definitions
       keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", lsp_opts)  -- show lsp implementations
       keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", lsp_opts) -- show lsp type definitions
       -- keymap.set("n", "<leader>rn", vim.lsp.buf.rename, lsp_opts)                   -- smart rename
@@ -55,48 +55,48 @@ return {
     -- configure gopls server
     lspconfig["gopls"].setup({
       capabilities = capabilities,
-      on_attach = on_attach,
+      on_attach = custom_on_attach,
     })
 
     -- configure html server
     lspconfig["html"].setup({
       capabilities = capabilities,
-      on_attach = on_attach,
+      on_attach = custom_on_attach,
     })
 
     -- configure typescript server with plugin
     lspconfig["ts_ls"].setup({
       capabilities = capabilities,
-      on_attach = on_attach,
+      on_attach = custom_on_attach,
     })
 
     -- Clangd setup
     lspconfig["clangd"].setup({
       capabilities = capabilities,
-      on_attach = on_attach,
+      on_attach = custom_on_attach,
     })
     -- configure python server
     lspconfig["pyright"].setup({
       capabilities = capabilities,
-      on_attach = on_attach,
+      on_attach = custom_on_attach,
     })
 
     -- configure markdown server
     lspconfig["marksman"].setup({
       capabilities = capabilities,
-      on_attach = on_attach,
+      on_attach = custom_on_attach,
     })
 
     -- configure java server
     lspconfig["jdtls"].setup({
       capabilities = capabilities,
-      on_attach = on_attach,
+      on_attach = custom_on_attach,
     })
 
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup({
       capabilities = capabilities,
-      on_attach = on_attach,
+      on_attach = custom_on_attach,
       settings = { -- custom settings for lua
         Lua = {
           -- make the language server recognize "vim" global
