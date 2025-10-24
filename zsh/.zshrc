@@ -1,3 +1,9 @@
+# AUTO COMPLETE FOR SMALL CASE
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+# # autoload to load the completion scripts
+# autoload -U compinit && compinit
+
 # Set the ZDOTDIR to the home directory
 export ZDOTDIR="${HOME}"
 
@@ -97,7 +103,6 @@ export PATH=$GOPATH:$GOBIN:$PATH
 export PATH=/Users/imamkhaja/.gem/ruby/2.1.0:$PATH                    # Ruby gems path
 export PATH=/Users/imamkhaja/.local/share/gem/ruby/3.1.0:$PATH        # Ruby gems path
 export PATH=/opt/homebrew/Cellar/ruby/3.1.1/lib/ruby/gems/3.1.0:$PATH # Ruby gems path
-# export PATH=/Users/imamkhaja/.cargo/bin:$PATH                         # RUST Crates executables
 
 export TERM=xterm-256color
 
@@ -120,22 +125,6 @@ weather() {
   curl $base_string
 }
 
-# AUTO COMPLETE FOR SMALL CASE
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-
-# GIT PROMPT
-# autoload -Uz add-zsh-hook
-# autoload -Uz add-zsh-hook vcs_info
-# setopt prompt_subst
-# add-zsh-hook precmd vcs_info
-# zstyle ':vcs_info:git:*' formats       ' git:(%b%u%c)'
-# zstyle ':vcs_info:git:*' actionformats ' git:(%b|%a%u%c)'
-# PROMPT+='%B%F{red}${vcs_info_msg_0_}%f %# %b'
-# zstyle ':vcs_info:*' check-for-changes true
-# zstyle ':vcs_info:*' unstagedstr ' *'
-# zstyle ':vcs_info:*' stagedstr ' +'
-
-
 # Copy present dir
 cpdir() {
   pwd | pbcopy
@@ -146,30 +135,5 @@ cpdir() {
 export GPG_TTY=$(tty) # For GnuPG
 #export GREP_COLOR='ms=01;04;25;36'
 
-# Check if STARSHIP_SOURCED is not set or less than 2
-# if [[ -z "$STARSHIP_SOURCED" || "$STARSHIP_SOURCED" -lt 2 ]]; then
-#   if [[ -z "$STARSHIP_SOURCED" ]]; then
-#     export STARSHIP_SOURCED=1
-#   else
-#     ((STARSHIP_SOURCED++))
-#   fi
-# 
-#   eval "$(starship init zsh)"
-# fi
-
+# start starship
 eval "$(starship init zsh)"
-
-# load aichat if there is aichat command
-if command -v aichat &> /dev/null; then
-  _aichat_zsh() {
-    if [[ -n "$BUFFER" ]]; then
-      local _old=$BUFFER
-      BUFFER+="⌛"
-      zle -I && zle redisplay
-      BUFFER=$(aichat -e "$_old")
-      zle end-of-line
-    fi
-  }
-  zle -N _aichat_zsh
-  bindkey '\ee' _aichat_zsh
-fi
