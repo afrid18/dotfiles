@@ -21,7 +21,7 @@ return {
     })
     -- saga specific background color
     vim.cmd([[
-    highlight SagaNormal guibg=COLOR
+      highlight SagaNormal guibg=COLOR
     ]])
   end,
   dependencies = {

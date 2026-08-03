@@ -1,8 +1,9 @@
 # AUTO COMPLETE FOR SMALL CASE
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-# # autoload to load the completion scripts
-# autoload -U compinit && compinit
+# autoload to load the completion scripts
+autoload -U compinit
+compinit
 
 # Set the ZDOTDIR to the home directory
 export ZDOTDIR="${HOME}"
@@ -29,10 +30,6 @@ antidote bundle ohmyzsh/ohmyzsh path:plugins/git
 antidote bundle ohmyzsh/ohmyzsh path:plugins/docker
 antidote bundle ohmyzsh/ohmyzsh path:plugins/docker-compose
 antidote bundle ohmyzsh/ohmyzsh path:plugins/kubectl
-
-
-# autoload to load the completion scripts
-autoload -U compinit && compinit
 
 # hashes of the frequently used directories
 hash -d codedir='/Users/imamkhaja/practice'
@@ -137,3 +134,33 @@ export GPG_TTY=$(tty) # For GnuPG
 
 # start starship
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/Users/imamkhaja/.bun/_bun" ] && source "/Users/imamkhaja/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/imamkhaja/.antigravity/antigravity/bin:$PATH"
+
+# kubectl completion
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
+# suggested to put this autocompletion at the end
+# since using ohmyzsh, LLM insisted to run rm -rf ~/.zcompdump && exec zsh once
+# Clear stale completion cache (run once manually if needed):
+# rm -f ~/.zcompdump && exec zsh
+
+if command -v aws_completer &>/dev/null; then
+    autoload -Uz bashcompinit && bashcompinit
+    complete -C "$(command -v aws_completer)" aws
+fi
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/imamkhaja/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+# Added by Antigravity IDE
+export PATH="/Users/imamkhaja/.antigravity-ide/antigravity-ide/bin:$PATH"

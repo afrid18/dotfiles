@@ -35,6 +35,7 @@ return {
         "pyright",
         "ts_ls",
         "jdtls",
+        "texlab",
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
@@ -43,15 +44,17 @@ return {
     mason_tool_installer.setup({
       ensure_installed = {
         -- Formatters
-        "prettier",   -- prettier formatter
-        "ruff",       -- python formatter
-        "stylua",     -- lua formatter
-        "checkstyle", -- java formatter
+        "prettier",         -- prettier formatter
+        "ruff",             -- python formatter
+        "stylua",           -- lua formatter
+        "checkstyle",       -- java formatter
+        "latexindent",      -- latex formatter
 
         -- Linters --
         "eslint_d", -- js linter
         "flake8",   -- python linter
-        "cpplint"   -- c++ linter
+        "cpplint",   -- c++ linter
+        "vale",     --  latex linter
       },
     })
   end,
