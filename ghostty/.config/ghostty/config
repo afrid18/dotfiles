@@ -1,0 +1,42 @@
+########### MAC OS Settings ###########
+
+macos-option-as-alt = true
+macos-titlebar-style = hidden
+background = #000000
+
+
+adjust-cell-height=+10
+font-family = "Fira Code"
+font-size = 16 
+
+# background = #221705
+foreground = #4bbf08
+background = #101421
+
+background-image = "japan.jpg"
+background-image-fit = cover
+background-opacity = 1 
+background-image-opacity = 0.1
+mouse-hide-while-typing = true
+
+# cursor-style = block
+cursor-color = cell-foreground
+cursor-opacity = 0.8
+
+bell-features = system, attention
+
+# theme= Everforest Dark Hard
+
+keybind = shift+enter=text:\x1b\r
+keybind = ctrl+m=text:\x0D
+keybind = ctrl+[=text:\x1b
+
+####### PADDING ########
+window-padding-x = 8
+window-padding-y = 8
+
+# Balance any leftover space
+# window-padding-balance = true
+
+# Hide padding color issues (optional, helps with TUI apps)
+# window-padding-color = extend-always
